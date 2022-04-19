@@ -82,6 +82,12 @@ fetch(apiTarefas, {
       div2.appendChild(p2);
 
       liTarefas.appendChild(div2);
+	  
+      let div3 = document.createElement("div");
+      div3.classList.add("not-done");
+      div3.classList.add("delete");
+
+      liTarefas.appendChild(div3);
 
       container[0].appendChild(liTarefas);
 
@@ -143,6 +149,27 @@ fetch(apiTarefas, {
               console.log(erro);
             });
         }
+      });
+	  
+      // Deletar Tarefa
+      div3.addEventListener("click", function () {
+
+        path = apiTarefas + "/" + task.id;
+
+        fetch(path, {
+          method: "DELETE",
+          headers: {
+            "Content-type": "application/json",
+            Authorization: sessionStorage.getItem("jwt"),
+          }
+        })
+          .then(function (resposta) {
+            document.location.reload(true)
+            return resposta.json();
+          })
+          .catch(function (erro) {
+            console.log(erro);
+          });
       });
     });
   })
