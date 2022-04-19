@@ -1,0 +1,10 @@
+eravalidação form login
+validação form cadastro
+css para os erros
+cadastro de novos usuários
+login de usuários existentes
+salvar o jwt na session quando fizer o login
+página de tarefas
+
+
+Mensagem de Cadastro confirmado com sucesso apos se cadastrar e redirecinar para pagina de login.
